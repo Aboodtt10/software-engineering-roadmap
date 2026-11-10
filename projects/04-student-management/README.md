@@ -1,14 +1,14 @@
 # Student Management System
 
-A Java 17 console application demonstrating object-oriented design, records, collections, validation, and separation of responsibilities.
+A Java 17 console application demonstrating object-oriented design, records, collections, validation, separation of concerns, and unit testing.
 
 ## Features
 
-- Add students with ID, name, email, and course.
-- List all students.
-- Find a student by ID.
-- Remove a student by ID.
-- Validate input and prevent duplicate IDs.
+- Add, list, find, update, and remove students.
+- Validate IDs, names, email addresses, and course names.
+- Prevent duplicate student IDs.
+- Keep console interaction separate from business logic.
+- Unit tests for service behavior and validation using JUnit 5.
 
 ## Requirements
 
@@ -24,26 +24,27 @@ mvn clean package
 mvn exec:java -Dexec.mainClass="dev.abdullah.student.Main"
 ```
 
-If the Maven exec plugin is not available locally, compile and run with the JDK:
+Run the automated tests:
 
 ```bash
-mvn clean package
-java -cp target/classes dev.abdullah.student.Main
+mvn test
 ```
 
 ## Design
 
 - `Student` is an immutable Java record containing validated student data.
-- `StudentService` owns the in-memory collection and student operations.
-- `Main` handles the console menu and user input.
+- `StudentService` owns the in-memory collection and CRUD operations.
+- `Main` handles console menus and user input.
+- `StudentServiceTest` checks core behavior with JUnit 5.
 
 ## Learning checklist
 
 - [ ] Explain why the `Student` record is immutable.
 - [ ] Explain why `LinkedHashMap` is used.
-- [ ] Add an update-student operation.
+- [ ] Explain how unit tests isolate the service layer.
 - [ ] Add file or database persistence.
-- [ ] Write unit tests for `StudentService`.
+- [ ] Add a REST API with Spring Boot.
+- [ ] Add integration tests.
 
 ## Current limitations
 
