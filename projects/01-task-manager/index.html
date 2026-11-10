@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A clean task manager built with HTML, CSS and vanilla JavaScript.">
+  <title>TaskFlow — Task Manager</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar"><div><p class="eyebrow">PERSONAL WORKSPACE</p><h1>TaskFlow<span>.</span></h1><p class="muted">Make room for what matters.</p></div><div class="date" id="today"></div></header>
+    <section class="summary" aria-label="Task summary">
+      <article><span>Total tasks</span><strong id="total">0</strong></article><article><span>Completed</span><strong id="completed">0</strong></article><article><span>Remaining</span><strong id="remaining">0</strong></article>
+    </section>
+    <section class="panel">
+      <form id="task-form" class="task-form"><label class="sr-only" for="task-input">Task title</label><input id="task-input" maxlength="90" placeholder="What needs to get done?" required><select id="priority" aria-label="Priority"><option value="medium">Medium</option><option value="high">High</option><option value="low">Low</option></select><button class="primary">Add task</button></form>
+      <div class="toolbar"><input id="search" class="search" type="search" placeholder="Search tasks…" aria-label="Search tasks"><div class="filters" role="group" aria-label="Filter tasks"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="active">Active</button><button class="filter" data-filter="completed">Completed</button></div></div>
+      <ul id="task-list" class="task-list" aria-live="polite"></ul><p id="empty" class="empty">No tasks here yet. Add one above to get started.</p>
+      <footer class="list-footer"><span id="count-label">0 tasks</span><button id="clear-completed" class="text-button">Clear completed</button></footer>
+    </section>
+    <footer class="credit">Built with HTML, CSS and vanilla JavaScript · Data stays in this browser</footer>
+  </main><script src="app.js"></script>
+</body></html>
