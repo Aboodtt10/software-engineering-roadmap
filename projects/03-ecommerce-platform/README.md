@@ -1,35 +1,45 @@
-# E-Commerce Platform — Project Blueprint
+# Northstar Market — E-Commerce Front-End Demo
 
-This directory documents the planned scope for the third portfolio project. It is intentionally marked as a blueprint rather than a completed shop.
+A responsive sample storefront built with **HTML, CSS, and vanilla JavaScript**. This project practices product rendering, category filters, search, cart state, quantity updates, browser persistence, and a simulated checkout flow.
 
-## Planned stack
+## Features
 
-- Frontend: HTML, CSS, JavaScript
-- Backend: Java 17 and Spring Boot
-- Database: PostgreSQL
-- Testing: JUnit and Spring Boot Test
+- Product catalog with sample product data.
+- Category filtering and live search.
+- Add products to cart and change quantities.
+- Cart subtotal and item count.
+- Cart persists in browser `localStorage`.
+- Simulated checkout message; no real order or payment is created.
+- Responsive layout for mobile and desktop.
 
-## Planned milestones
+## Run locally
 
-1. Product catalog and product detail pages.
-2. Shopping cart with quantity updates.
-3. User registration and authentication.
-4. Product, category, and order REST APIs.
-5. PostgreSQL persistence and database migrations.
-6. Order checkout flow using a simulated payment method (no real card processing).
-7. Automated tests and deployment documentation.
+Open `index.html` in a modern browser, or serve this directory with VS Code Live Server.
 
-## Planned domain model
+## Project structure
 
-- Product: id, name, description, price, stock quantity, category.
-- User: id, name, email, password hash, role.
-- CartItem: product, quantity.
-- Order: id, user, items, total, status, created date.
+```text
+03-ecommerce-platform/
+├── index.html
+├── styles.css
+├── app.js
+└── README.md
+```
 
-## Security notes
+## Learning checklist
 
-Passwords must be hashed with a modern password-hashing algorithm. Secrets belong in environment variables, never in Git. Payment card details must not be collected or stored by this learning project.
+- [ ] Explain how product data is rendered into DOM elements.
+- [ ] Trace how adding a product changes cart state.
+- [ ] Explain why cart data is saved in `localStorage`.
+- [ ] Add a product detail view.
+- [ ] Replace sample products with a REST API.
+- [ ] Build a Java Spring Boot backend with PostgreSQL.
+- [ ] Add secure user authentication and automated tests.
 
-## Status
+## Important limitations
 
-**Planning / not implemented yet.** The implementation will be added in a later iteration after the API and database learning milestones.
+This is a **front-end demo only**. It has no backend, user accounts, inventory synchronization, order storage, or payment integration. The checkout is simulated and collects no payment details. Do not treat it as a production store.
+
+## Tech stack
+
+HTML5 · CSS3 · Vanilla JavaScript · Browser localStorage
