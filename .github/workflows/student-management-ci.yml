@@ -1,0 +1,29 @@
+name: Java CI
+
+on:
+  push:
+    paths:
+      - "projects/04-student-management/**"
+      - ".github/workflows/student-management-ci.yml"
+  pull_request:
+    paths:
+      - "projects/04-student-management/**"
+      - ".github/workflows/student-management-ci.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/04-student-management
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      - name: Run tests
+        run: mvn --batch-mode clean verify
